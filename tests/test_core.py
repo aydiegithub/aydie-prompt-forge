@@ -3,8 +3,8 @@ import yaml
 from pathlib import Path
 
 # Import the components we need to test
-import prompt_forge
-from prompt_forge import AydieException, InvalidPromptFileError
+import aydie_prompt_forge
+from aydie_prompt_forge import AydieException, InvalidPromptFileError
 
 # --- Test Fixtures ---
 # Fixtures are a powerful feature of pytest. They provide a fixed baseline
@@ -53,13 +53,13 @@ def test_load_success(valid_prompts_yaml: Path):
     """ 
     Tests the happy path: successfully loading a valid repository.
     """
-    repo = prompt_forge.load(valid_prompts_yaml)
-    assert isinstance(repo, prompt_forge.PromptRepository)
+    repo = aydie_prompt_forge.load(valid_prompts_yaml)
+    assert isinstance(repo, aydie_prompt_forge.PromptRepository)
     assert len(repo.prompts) == 2
     
     # Check the first prompt
     summarize_prompt = repo.get("test_summarize_v1")
-    assert isinstance(summarize_prompt, prompt_forge.Prompt)
+    assert isinstance(summarize_prompt, aydie_prompt_forge.Prompt)
     assert summarize_prompt.id == "test_summarize_v1"
     assert summarize_prompt.author == "tester"
     assert summarize_prompt.fill(text="hello") == "Summarize this: hello"
@@ -73,7 +73,7 @@ def test_load_file_not_found():
     Tests that loading a non-existent file raises FileNotFoundError.
     """
     with pytest.raises(FileNotFoundError):
-        prompt_forge.load("non_existent_file.yml")
+        aydie_prompt_forge.load("non_existent_file.yml")
 
 
 def test_load_malformed_yaml(malformed_prompts_yaml: Path):
@@ -81,7 +81,7 @@ def test_load_malformed_yaml(malformed_prompts_yaml: Path):
     Tests that a file with a missing required field raises InvalidPromptFileError.
     """
     with pytest.raises(InvalidPromptFileError) as excinfo:
-        prompt_forge.load(malformed_prompts_yaml)
+        aydie_prompt_forge.load(malformed_prompts_yaml)
     # Check that the error message is helpful.
     assert "missing the required 'id' or 'template' field" in str(excinfo.value)
 
@@ -91,7 +91,7 @@ def test_load_duplicate_id_yaml(duplicate_id_yaml: Path):
     Tests that a file with duplicate prompt IDs raises InvalidPromptFileError.
     """
     with pytest.raises(InvalidPromptFileError) as excinfo:
-        prompt_forge.load(duplicate_id_yaml)
+        aydie_prompt_forge.load(duplicate_id_yaml)
     assert "Duplicate prompt ID 'duplicate_id' found" in str(excinfo.value)
 
 
@@ -104,4 +104,4 @@ def test_load_invalid_yaml_syntax(tmp_path: Path):
     file_path.write_text(invalid_yaml_content)
 
     with pytest.raises(yaml.YAMLError):
-        prompt_forge.load(file_path)
+        aydie_prompt_forge.load(file_path)

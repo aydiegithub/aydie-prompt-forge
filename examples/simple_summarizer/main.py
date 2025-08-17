@@ -1,4 +1,4 @@
-import prompt_forge
+import aydie_prompt_forge
 from pathlib import Path
 
 # --- Configuration ---
@@ -14,7 +14,7 @@ def demonstrate_summarizer():
     
     # 1. Load the entire repository from the file.
     # This is the main entry point of the prompt-forge library.
-    repo = prompt_forge.load(PROMPT_FILE)
+    repo = aydie_prompt_forge.load(PROMPT_FILE)
     print(f"Repository '{PROMPT_FILE.name}' loaded successfully!")
     
     # 2. Get a specific prompt by its unique ID.
@@ -57,7 +57,7 @@ def main():
     """
     try:
         demonstrate_summarizer()
-    except prompt_forge.AydieException as e:
+    except aydie_prompt_forge.AydieException as e:
         # This will catch any custom errors from our library,
         # such as InvalidPromptFileError.
         print(f"An error occured with Prompt-Forge: {e}")

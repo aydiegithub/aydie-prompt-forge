@@ -79,14 +79,14 @@ Now, you can use the `load()` function to parse your repository and use your pro
 
 **`main.py`:**
 ```python
-import prompt_forge
+import aydie_prompt_forge
 
 # Define the path to your prompt repository
 PROMPT_FILE = "prompts.yml"
 
 try:
     # 1. Load the entire repository from the file.
-    repo = prompt_forge.load(PROMPT_FILE)
+    repo = aydie_prompt_forge.load(PROMPT_FILE)
     print("Repository loaded successfully!")
 
     # 2. Get a specific prompt by its unique ID.
@@ -107,7 +107,7 @@ try:
         # You can also access the metadata
         print(f"\nModel parameters to use: {summarize_prompt.model_parameters}")
 
-except prompt_forge.AydieException as e:
+except aydie_prompt_forge.AydieException as e:
     # Catch any errors from the aydie-prompt-forge library, like a malformed file.
     print(f"An error occurred with aydie-prompt-forge: {e}")
 except FileNotFoundError:
@@ -127,49 +127,12 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 
 ## Connect with Me
 
-<p align="center">
-  <!-- GitHub Profile -->
-  <a href="https://github.com/aydiegithub" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-Profile-181717?logo=github&logoColor=white" alt="GitHub">
-  </a>
-  
-  <!-- Source Code -->
-  <a href="https://github.com/aydiegithub/aydie-prompt-forge" target="_blank">
-    <img src="https://img.shields.io/badge/Source_Code-PromptForge-2f80ed?logo=github&logoColor=white" alt="Source Code">
-  </a>
-  
-  <!-- Website -->
-  <a href="https://aydie.in" target="_blank">
-    <img src="https://img.shields.io/badge/Website-aydie.in-2ea44f?logo=googlechrome&logoColor=white" alt="Website">
-  </a>
-  
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/aydiemusic" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Profile-0a66c2?logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
-  
-  <!-- Twitter/X -->
-  <a href="https://x.com/aydiemusic" target="_blank">
-    <img src="https://img.shields.io/badge/X-Profile-black?logo=x&logoColor=white" alt="Twitter/X">
-  </a>
-  
-  <!-- Instagram -->
-  <a href="https://instagram.com/aydiemusic" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-Profile-e4405f?logo=instagram&logoColor=white" alt="Instagram">
-  </a>
-  
-  <!-- YouTube -->
-  <a href="https://youtube.com/@aydiemusic" target="_blank">
-    <img src="https://img.shields.io/badge/YouTube-Channel-ff0000?logo=youtube&logoColor=white" alt="YouTube">
-  </a>
-  
-  <!-- GitLab -->
-  <a href="https://gitlab.com/aydie" target="_blank">
-    <img src="https://img.shields.io/badge/GitLab-Profile-fca121?logo=gitlab&logoColor=white" alt="GitLab">
-  </a>
-  
-  <!-- Email -->
-  <a href="mailto:business@aydie.in">
-    <img src="https://img.shields.io/badge/Email-business@aydie.in-d14836?logo=gmail&logoColor=white" alt="Email">
-  </a>
-</p>
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?logo=github&logoColor=white)](https://github.com/aydiegithub)
+[![Source Code](https://img.shields.io/badge/Source_Code-PromptForge-2f80ed?logo=github&logoColor=white)](https://github.com/aydiegithub/aydie-prompt-forge)
+[![Website](https://img.shields.io/badge/Website-aydie.in-2ea44f?logo=googlechrome&logoColor=white)](https://aydie.in)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0a66c2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aydiemusic)
+[![X](https://img.shields.io/badge/X-Profile-black?logo=x&logoColor=white)](https://x.com/aydiemusic)
+[![Instagram](https://img.shields.io/badge/Instagram-Profile-e4405f?logo=instagram&logoColor=white)](https://instagram.com/aydiemusic)
+[![YouTube](https://img.shields.io/badge/YouTube-Channel-ff0000?logo=youtube&logoColor=white)](https://youtube.com/@aydiemusic)
+[![GitLab](https://img.shields.io/badge/GitLab-Profile-fca121?logo=gitlab&logoColor=white)](https://gitlab.com/aydie)
+[![Email](https://img.shields.io/badge/Email-developer@aydie.in-d14836?logo=gmail&logoColor=white)](mailto:developer@aydie.in)

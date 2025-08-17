@@ -1,0 +1,35 @@
+# This is an example prompt repository for the simple_summarizer demo.
+# It demonstrates the structure that prompt-forge expects.
+
+- id: summarize_article_v1.1
+  author: "Aydie"
+  version: "1.1"
+  description: "Summarizes a long article into three concise bullet points."
+  tags: [summarization, production]
+  model_parameters:
+    temperature: 0.6
+    max_tokens: 150
+  template: |
+    You are a world-class editor. Summarize the following article into
+    exactly three concise bullet points.
+
+    ARTICLE:
+    ---
+    {article_text}
+    ---
+
+- id: sentiment_analysis_v1
+  author: "Aydie"
+  version: "1.0"
+  description: "Analyzes the sentiment of a user's comment."
+  tags: [classification, beta]
+  template: "Is the sentiment of the following comment positive, negative, or neutral?\n\nCOMMENT: {user_comment}"
+
+- id: headline_generator_v2
+  author: "Aydie"
+  version: "2.0"
+  description: "Generates five click-worthy headlines for a given topic."
+  tags: [creative, marketing]
+  model_parameters:
+    temperature: 0.85
+  template: "Generate five creative and engaging headlines for a blog post about '{topic}'."

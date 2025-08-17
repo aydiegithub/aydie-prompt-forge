@@ -117,7 +117,7 @@ except FileNotFoundError:
 
 ## Contributing
 
-Contributions are welcome! If you have an idea for a new feature, find a bug, or want to improve the documentation, please open an issue or submit a pull request on our [GitHub repository](https://github.com/your_username/aydie-prompt-forge).
+Contributions are welcome! If you have an idea for a new feature, find a bug, or want to improve the documentation, please open an issue or submit a pull request on our [GitHub repository](https://github.com/aydiegithub/aydie-prompt-forge).
 
 ## License
 
